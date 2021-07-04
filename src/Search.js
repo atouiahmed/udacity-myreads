@@ -1,8 +1,5 @@
 import React from 'react'
-// import * as BooksAPI from './BooksAPI'
 import './App.css'
-import GroupBooks from "./components/GroupBooks";
-import {Route} from "react-router-dom";
 import * as BooksAPI from "./BooksAPI"
 import BooksItemList from "./components/BooksItemList";
 import PropTypes from "prop-types";

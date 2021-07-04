@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import OptionsItemList from "./OptionsItemList";
 import PropTypes from "prop-types";
-import * as BooksAPI from "../BooksAPI";
 
 class OptionsList extends Component {
 

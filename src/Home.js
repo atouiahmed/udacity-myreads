@@ -1,9 +1,6 @@
 import React from 'react'
-// import * as BooksAPI from './BooksAPI'
 import './App.css'
 import GroupBooks from "./components/GroupBooks";
-import {Route} from "react-router-dom";
-import * as BooksAPI from "./BooksAPI";
 import PropTypes from "prop-types";
 
 class Home extends React.Component {
