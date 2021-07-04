@@ -39,7 +39,7 @@ npm run start
 
 Ahmed Atoui
 
-- [https://atouiahmed.com/](https://atouiahmed.com/en/)
+- [https://atouiahmed.com/](https://atouiahmed.com/)
 
 ## License
 
