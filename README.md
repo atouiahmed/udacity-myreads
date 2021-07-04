@@ -5,6 +5,8 @@ My Reads is a bookshelf app that allows users to categorize books they have read
 
 ## Demo
 
+- [https://aatoui-myreads.netlify.app/](https://aatoui-myreads.netlify.app/)
+
 
 ## Getting Started
 
