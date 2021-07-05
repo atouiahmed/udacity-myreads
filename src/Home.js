@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 class Home extends React.Component {
 
     static propTypes = {
-        lists: PropTypes.array.isRequired,
+        lists: PropTypes.object.isRequired,
     };
     goSearch = () => {
         this.props.onGoSearch();

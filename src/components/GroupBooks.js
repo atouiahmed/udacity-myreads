@@ -6,7 +6,7 @@ class GroupBooks extends Component {
 
     static propTypes = {
         title: PropTypes.string.isRequired,
-        books: PropTypes.string.array,
+        books: PropTypes.array.isRequired,
         onOptionSelect: PropTypes.func.isRequired,
 
     };
