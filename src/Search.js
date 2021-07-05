@@ -8,6 +8,7 @@ class Search extends React.Component {
 
     static propTypes = {
         onOptionSelect: PropTypes.func.isRequired,
+        lists: PropTypes.object.isRequired,
     };
     state = {
         query: '',
@@ -47,6 +48,7 @@ class Search extends React.Component {
     }
 
     render() {
+        const {lists} = this.props;
         return (
             <div className="app">
                 <div className="search-books">
@@ -62,9 +64,20 @@ class Search extends React.Component {
                     </div>
                     <div className="search-books-results">
                         <ol className="books-grid">
-                            {this.state.books.map(book => (
-                                <BooksItemList key={book.id} book={book} onOptionSelect={this.props.onOptionSelect}/>
-                            ))}
+                            {this.state.books.map(book => {
+                                book.shelf = 'none';
+                                if (lists.currentlyReading.filter(b => b.id === book.id).length) {
+                                    book.shelf = 'currentlyReading';
+                                } else if (lists.wantToRead.filter(b => b.id === book.id).length) {
+                                    book.shelf = 'wantToRead';
+                                } else if (lists.read.filter(b => b.id === book.id).length) {
+                                    book.shelf = 'read';
+                                }
+                                return (
+                                    <BooksItemList key={book.id} book={book}
+                                                   onOptionSelect={this.props.onOptionSelect}/>
+                                )
+                            })}
                         </ol>
                     </div>
                 </div>

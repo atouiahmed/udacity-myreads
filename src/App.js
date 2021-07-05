@@ -62,7 +62,6 @@ class BooksApp extends React.Component {
         return (
             <div className="app">
                 <Switch>
-
                     <Route exact path='/' render={({history}) => (
                         <Home onGoSearch={() => {
                             history.push('/search');
@@ -71,7 +70,7 @@ class BooksApp extends React.Component {
                     <Route path='/search' render={({history}) => (
                         <Search onCloseSearch={() => {
                             history.push('/');
-                        }} onOptionSelect={this.handleSelectOptionChange}/>
+                        }} onOptionSelect={this.handleSelectOptionChange}  lists={this.state.lists}/>
                     )}/>
                     <Route component={PageNotFound}/>
                 </Switch>

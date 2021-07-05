@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import OptionsItemList from "./OptionsItemList";
 import PropTypes from "prop-types";
 
 class OptionsList extends Component {
@@ -13,14 +12,15 @@ class OptionsList extends Component {
     };
 
     render() {
+        const {book} = this.props;
         return (
             <div className="book-shelf-changer">
-                <select onChange={(event) => this.handleSelectChange(event.target.value)}>
-                    <option value="move" disabled selected>Move to...</option>
-                    <OptionsItemList value="currentlyReading" text="Currently Reading"/>
-                    <OptionsItemList value="wantToRead" text="Want to Read"/>
-                    <OptionsItemList value="read" text="Read"/>
-                    <OptionsItemList value="none" text="None"/>
+                <select value={book.shelf} onChange={(event) => this.handleSelectChange(event.target.value)}>
+                    <option value="move" disabled>Move to...</option>
+                    <option value="currentlyReading" >Currently Reading</option>
+                    <option value="wantToRead" >Want to Read</option>
+                    <option value="read" >Read</option>
+                    <option value="none" >None</option>
                 </select>
             </div>
         );
