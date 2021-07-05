@@ -5,6 +5,7 @@ import Search from "./Search";
 import Home from "./Home";
 import * as BooksAPI from "./BooksAPI";
 import PageNotFound from "./components/PageNotFound";
+import {Switch} from 'react-router-dom';
 
 class BooksApp extends React.Component {
     state = {
@@ -60,17 +61,20 @@ class BooksApp extends React.Component {
     render() {
         return (
             <div className="app">
-                <Route exact path='/' render={({history}) => (
-                    <Home onGoSearch={() => {
-                        history.push('/search');
-                    }} onOptionSelect={this.handleSelectOptionChange} lists={this.state.lists}/>
-                )}/>
-                <Route path='/search' render={({history}) => (
-                    <Search onCloseSearch={() => {
-                        history.push('/');
-                    }} onOptionSelect={this.handleSelectOptionChange}/>
-                )}/>
-                <Route component={PageNotFound}/>
+                <Switch>
+
+                    <Route exact path='/' render={({history}) => (
+                        <Home onGoSearch={() => {
+                            history.push('/search');
+                        }} onOptionSelect={this.handleSelectOptionChange} lists={this.state.lists}/>
+                    )}/>
+                    <Route path='/search' render={({history}) => (
+                        <Search onCloseSearch={() => {
+                            history.push('/');
+                        }} onOptionSelect={this.handleSelectOptionChange}/>
+                    )}/>
+                    <Route component={PageNotFound}/>
+                </Switch>
 
             </div>
         )
