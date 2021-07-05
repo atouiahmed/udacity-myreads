@@ -4,6 +4,7 @@ import {Route} from "react-router-dom";
 import Search from "./Search";
 import Home from "./Home";
 import * as BooksAPI from "./BooksAPI";
+import PageNotFound from "./components/PageNotFound";
 
 class BooksApp extends React.Component {
     state = {
@@ -69,6 +70,7 @@ class BooksApp extends React.Component {
                         history.push('/');
                     }} onOptionSelect={this.handleSelectOptionChange}/>
                 )}/>
+                <Route component={PageNotFound}/>
 
             </div>
         )
